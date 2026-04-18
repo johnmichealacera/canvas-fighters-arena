@@ -2,11 +2,13 @@
   "name": "canvas-fighters-arena",
   "version": "0.1.0",
   "private": true,
+  "main": "electron/main.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "electron:build": "node electron/build.js"
   },
   "dependencies": {
     "next": "^16.2.4",
@@ -19,6 +21,9 @@
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "@types/three": "^0.172.0",
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8",
+    "tar": "^7.4.3",
     "typescript": "^5.9.3"
   },
   "description": "A 2D versus fighting game built with Next.js and HTML5 Canvas.",
