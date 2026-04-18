@@ -383,6 +383,20 @@ function drawRoundEndOverlay(
   ctx.textAlign = "start";
 }
 
+/** Draw a single fighter (sprites or fallback) for auxiliary canvases such as adventure mode. */
+export function drawFighterWorldInstance(
+  ctx: CanvasRenderingContext2D,
+  fighter: FighterState,
+  now: number,
+  spriteAssets: LoadedSpriteAssets | null,
+): void {
+  if (!spriteAssets) {
+    drawFighterFallback(ctx, fighter, now);
+    return;
+  }
+  drawFighterWithSprite(ctx, fighter, now, spriteAssets);
+}
+
 export function renderFrame(options: RenderFrameOptions): void {
   const { ctx, canvasWidth, canvasHeight, match, spriteAssets, backgrounds } = options;
   const now = performance.now();
